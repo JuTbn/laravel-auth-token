@@ -1,7 +1,13 @@
-import { createApp } from 'vue';
 import './bootstrap';
-import App from './App.vue'
+import { createApp } from 'vue/dist/vue.esm-bundler.js';
+import router from './router';
+import Login from './components/Login.vue';
+import Dashboard from './components/Dashboard.vue';
 
 
-createApp(App)
-    .mount('#app');
+createApp({
+    components: {
+        Login,
+        Dashboard
+    }
+}).use(router).mount('#app');

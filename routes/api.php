@@ -15,8 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('login', [AuthController::class, 'authenticate']);
+Route::post('login', [AuthController::class, 'authenticate'])
+    ->name('authenticate');
 
-
-Route::get('dashboard', [AuthController::class, 'dashboard'])
-    ->middleware('auth:sanctum');
+Route::post('privateInformations', function () {
+    return response()->json([
+        'information' => 'Hello World!'
+    ]);
+})
+->middleware('auth:sanctum');

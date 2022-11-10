@@ -8,9 +8,9 @@
     @vite('resources/css/app.css')
 </head>
 <body>
-    <main id="app">
-        
-    </main>
+    <div id="app">
+        <router-view />
+    </div>
     @vite('resources/js/app.js')
 </body>
 </html>
